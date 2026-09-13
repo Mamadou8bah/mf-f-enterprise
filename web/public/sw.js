@@ -1,0 +1,91 @@
+/* MF & F Enterprise — installable PWA service worker (production) */
+const VERSION = "mff-v2";
+const PRECACHE = `${VERSION}-shell`;
+const RUNTIME = `${VERSION}-runtime`;
+
+const SHELL = [
+  "/offline",
+  "/manifest.webmanifest",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/icons/apple-touch-icon.png",
+  "/mf_logo.png",
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches
+      .open(PRECACHE)
+      .then((cache) => cache.addAll(SHELL))
+      .then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k)))
+      )
+      .then(() => self.clients.claim())
+  );
+});
+
+function isNextBundle(url) {
+  return url.pathname.startsWith("/_next/");
+}
+
+function isApiOrAuth(url) {
+  return url.pathname.startsWith("/api/");
+}
+
+function isStaticAsset(url) {
+  return (
+    url.pathname.startsWith("/icons/") ||
+    url.pathname.endsWith(".webmanifest") ||
+    url.pathname.endsWith(".png") ||
+    url.pathname.endsWith(".svg") ||
+    url.pathname.endsWith(".ico")
+  );
+}
+
+self.addEventListener("fetch", (event) => {
+  const { request } = event;
+  if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  // Never cache Next.js bundles / RSC / HMR — always network
+  if (isNextBundle(url) || isApiOrAuth(url)) return;
+
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(RUNTIME).then((cache) => cache.put(request, copy));
+          return res;
+        })
+        .catch(async () => {
+          const cached = await caches.match(request);
+          return cached || caches.match("/offline");
+        })
+    );
+    return;
+  }
+
+  if (isStaticAsset(url)) {
+    event.respondWith(
+      caches.match(request).then(
+        (cached) =>
+          cached ||
+          fetch(request).then((res) => {
+            const copy = res.clone();
+            caches.open(RUNTIME).then((cache) => cache.put(request, copy));
+            return res;
+          })
+      )
+    );
+  }
+});

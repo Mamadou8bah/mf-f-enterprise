@@ -1,0 +1,52 @@
+{
+  "name": "@garawol/web",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run db:generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:init": "npm run db:push && npm run db:seed",
+    "db:generate": "npm run generate -w @garawol/db",
+    "db:migrate": "npm run migrate -w @garawol/db",
+    "db:push": "npm run push -w @garawol/db",
+    "db:seed": "npm run seed -w @garawol/db",
+    "db:studio": "npm run studio -w @garawol/db",
+    "db:migrate-sqlite": "tsx scripts/migrate-sqlite-to-neon.ts"
+  },
+  "dependencies": {
+    "@garawol/db": "*",
+    "@garawol/shared": "*",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "dexie": "^4.0.11",
+    "drizzle-orm": "^0.39.3",
+    "next": "^15.2.0",
+    "next-auth": "^4.24.11",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.4",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/uuid": "^10.0.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.22.0",
+    "eslint-config-next": "^15.2.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

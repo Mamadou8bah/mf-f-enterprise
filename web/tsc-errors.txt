@@ -1,0 +1,515 @@
+packages/db/src/sql.ts(5,10): error TS2305: Module '"./index"' has no exported member 'getSqlite'.
+src/app/admin/flags/page.tsx(30,8): error TS2339: Property 'prepare' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+src/app/admin/landlords/page.tsx(28,20): error TS2339: Property 'filter' does not exist on type 'Promise<Landlord[]>'.
+src/app/admin/landlords/page.tsx(28,28): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/admin/landlords/page.tsx(38,29): error TS2339: Property 'length' does not exist on type 'Promise<Landlord[]>'.
+src/app/admin/landlords/page.tsx(43,20): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/admin/landlords/page.tsx(51,48): error TS2339: Property 'filter' does not exist on type 'Promise<Property[]>'.
+src/app/admin/landlords/page.tsx(51,56): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/admin/pay-links/page.tsx(29,6): error TS2339: Property 'prepare' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+src/app/admin/pay-links/page.tsx(38,6): error TS2339: Property 'filter' does not exist on type 'Promise<Tenancy[]>'.
+src/app/admin/pay-links/page.tsx(38,14): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/admin/pay-links/page.tsx(40,11): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/admin/pay-links/page.tsx(42,44): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/admin/pay-links/page.tsx(45,56): error TS2339: Property 'map' does not exist on type 'Promise<Tenancy[]>'.
+src/app/admin/pay-links/page.tsx(45,61): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/admin/pay-links/page.tsx(49,89): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/admin/properties/page.tsx(29,57): error TS2339: Property 'map' does not exist on type 'Promise<Landlord[]>'.
+src/app/admin/properties/page.tsx(29,62): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/admin/properties/page.tsx(30,21): error TS2339: Property 'filter' does not exist on type 'Promise<Property[]>'.
+src/app/admin/properties/page.tsx(30,29): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/admin/properties/page.tsx(40,29): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/admin/properties/page.tsx(43,39): error TS2339: Property 'map' does not exist on type 'Promise<Landlord[]>'.
+src/app/admin/properties/page.tsx(43,44): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/admin/properties/page.tsx(44,30): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/admin/properties/page.tsx(45,27): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/admin/properties/page.tsx(51,21): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/admin/staff/page.tsx(28,20): error TS2339: Property 'filter' does not exist on type 'Promise<Staff[]>'.
+src/app/admin/staff/page.tsx(28,28): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/app/admin/staff/page.tsx(43,20): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/app/api/export/csv/route.ts(23,55): error TS2339: Property 'map' does not exist on type 'Promise<Receipt[]>'.
+src/app/api/export/csv/route.ts(23,60): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/api/export/csv/route.ts(24,21): error TS2488: Type 'Promise<Payment[]>' must have a '[Symbol.iterator]()' method that returns an iterator.
+src/app/api/export/csv/route.ts(29,21): error TS2488: Type 'Promise<Tenancy[]>' must have a '[Symbol.iterator]()' method that returns an iterator.
+src/app/api/export/csv/route.ts(32,27): error TS2339: Property 'map' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/api/export/csv/route.ts(32,32): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/api/export/csv/route.ts(32,59): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/api/export/csv/route.ts(33,20): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<TenancyUnitLink[]>'.
+  Property '0' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/api/export/csv/route.ts(33,40): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<TenancyUnitLink[]>'.
+  Property '0' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/api/export/csv/route.ts(34,45): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/api/export/csv/route.ts(35,26): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/api/export/csv/route.ts(35,64): error TS2339: Property 'name' does not exist on type 'Promise<Property | undefined>'.
+src/app/api/export/csv/route.ts(41,36): error TS2339: Property 'filter' does not exist on type 'Promise<Tenancy[]>'.
+src/app/api/export/csv/route.ts(41,44): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/app/api/export/csv/route.ts(45,27): error TS2339: Property 'map' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/api/export/csv/route.ts(45,32): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/api/export/csv/route.ts(45,59): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/api/export/csv/route.ts(46,20): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<TenancyUnitLink[]>'.
+  Property '0' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/api/export/csv/route.ts(46,40): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<TenancyUnitLink[]>'.
+  Property '0' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/api/export/csv/route.ts(47,45): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/api/export/csv/route.ts(49,26): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/api/export/csv/route.ts(49,64): error TS2339: Property 'name' does not exist on type 'Promise<Property | undefined>'.
+src/app/documents/arrears/page.tsx(46,14): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(48,16): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(49,20): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(49,37): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(97,32): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(98,41): error TS2339: Property 'overdueTotal' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(99,26): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(105,32): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(106,41): error TS2339: Property 'dueSoonTotal' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(111,30): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(111,52): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(115,23): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(115,44): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(127,26): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(130,32): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(133,22): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(133,44): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(234,24): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/arrears/page.tsx(235,29): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: DueCollectionRow[]; dueSoon: DueCollectionRow[]; overdueTotal: number; dueSoonTotal: number; }>'.
+src/app/documents/cash-up/page.tsx(32,19): error TS2488: Type 'Promise<Payment[]>' must have a '[Symbol.iterator]()' method that returns an iterator.
+src/app/documents/cash-up/page.tsx(36,50): error TS2339: Property 'map' does not exist on type 'Promise<Staff[]>'.
+src/app/documents/cash-up/page.tsx(36,55): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(37,22): error TS2339: Property 'reduce' does not exist on type 'Promise<Payment[]>'.
+src/app/documents/cash-up/page.tsx(37,30): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(37,33): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(38,22): error TS2339: Property 'map' does not exist on type 'Promise<Payment[]>'.
+src/app/documents/cash-up/page.tsx(38,27): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(40,37): error TS2339: Property 'tenant_id' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/documents/cash-up/page.tsx(41,22): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<TenancyUnitLink[]>'.
+  Property '0' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/documents/cash-up/page.tsx(41,41): error TS2339: Property 'id' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/documents/cash-up/page.tsx(43,43): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/documents/cash-up/page.tsx(46,27): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/documents/cash-up/page.tsx(47,23): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/documents/cash-up/page.tsx(48,27): error TS2339: Property 'name' does not exist on type 'Promise<Property | undefined>'.
+src/app/documents/cash-up/page.tsx(72,55): error TS2339: Property 'length' does not exist on type 'Promise<Payment[]>'.
+src/app/documents/cash-up/page.tsx(110,25): error TS7031: Binding element 'p' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(110,28): error TS7031: Binding element 'unitCode' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(110,38): error TS7031: Binding element 'propertyName' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(120,17): error TS2339: Property 'length' does not exist on type 'Promise<Payment[]>'.
+src/app/documents/cash-up/page.tsx(131,51): error TS2339: Property 'length' does not exist on type 'Promise<Payment[]>'.
+src/app/documents/cash-up/page.tsx(150,28): error TS7031: Binding element 'p' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(150,31): error TS7031: Binding element 'tenantName' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(150,43): error TS7031: Binding element 'unitCode' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(150,53): error TS7031: Binding element 'propertyName' implicitly has an 'any' type.
+src/app/documents/cash-up/page.tsx(150,67): error TS7031: Binding element 'staffName' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(39,21): error TS2339: Property 'rows' does not exist on type 'Promise<{ rows: PropertyCollectionRow[]; totalCollected: number; paymentCount: number; propertiesWithTake: number; }>'.
+src/app/documents/collections/page.tsx(39,34): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(42,36): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(42,39): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(43,39): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(43,42): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(68,38): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(73,24): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(125,38): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/collections/page.tsx(131,27): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(37,35): error TS2339: Property 'filter' does not exist on type 'Promise<Property[]>'.
+src/app/documents/demands/page.tsx(37,43): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(48,23): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(68,27): error TS2339: Property 'rows' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/demands/page.tsx(68,40): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(71,10): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(81,30): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(85,26): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/demands/page.tsx(99,21): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/demands/page.tsx(118,23): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(118,26): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(134,47): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/demands/page.tsx(139,22): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/demands/page.tsx(139,25): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/app/documents/directory/page.tsx(34,35): error TS2339: Property 'filter' does not exist on type 'Promise<Property[]>'.
+src/app/documents/directory/page.tsx(34,43): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/directory/page.tsx(45,23): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/directory/page.tsx(66,12): error TS2339: Property 'rows' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/directory/page.tsx(67,10): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/directory/page.tsx(78,12): error TS2339: Property 'rows' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/directory/page.tsx(87,21): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/directory/page.tsx(88,40): error TS2339: Property 'landlord' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/directory/page.tsx(108,24): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/directory/page.tsx(129,39): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/directory/page.tsx(130,35): error TS2339: Property 'landlord' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/directory/page.tsx(137,40): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/directory/page.tsx(141,40): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/directory/page.tsx(147,25): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/page.tsx(54,58): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/documents/page.tsx(55,65): error TS2339: Property 'length' does not exist on type 'Promise<Landlord[]>'.
+src/app/documents/round-sheet/page.tsx(34,35): error TS2339: Property 'filter' does not exist on type 'Promise<Property[]>'.
+src/app/documents/round-sheet/page.tsx(34,43): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/round-sheet/page.tsx(45,23): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/round-sheet/page.tsx(65,24): error TS2339: Property 'rows' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/round-sheet/page.tsx(65,37): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/round-sheet/page.tsx(68,10): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/round-sheet/page.tsx(87,21): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/round-sheet/page.tsx(108,24): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/round-sheet/page.tsx(131,51): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/documents/round-sheet/page.tsx(137,40): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/round-sheet/page.tsx(141,40): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/round-sheet/page.tsx(147,25): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/documents/vacancy/page.tsx(31,29): error TS2339: Property 'filter' does not exist on type 'Promise<Unit[]>'.
+src/app/documents/vacancy/page.tsx(31,37): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/documents/vacancy/page.tsx(32,54): error TS2339: Property 'map' does not exist on type 'Promise<Property[]>'.
+src/app/documents/vacancy/page.tsx(32,59): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/documents/vacancy/page.tsx(34,22): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/documents/vacancy/page.tsx(60,68): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/documents/vacancy/page.tsx(68,39): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(69,32): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(72,23): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(73,23): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(74,25): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(75,23): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<UnitPhoto[]>'.
+  Property '0' does not exist on type 'Promise<UnitPhoto[]>'.
+src/app/documents/vacancy/page.tsx(78,32): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(80,18): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<UnitPhoto[]>'.
+  Property '0' does not exist on type 'Promise<UnitPhoto[]>'.
+src/app/documents/vacancy/page.tsx(83,26): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<UnitPhoto[]>'.
+  Property '0' does not exist on type 'Promise<UnitPhoto[]>'.
+src/app/documents/vacancy/page.tsx(90,22): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(93,22): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(94,22): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(94,66): error TS18046: 'u' is of type 'unknown'.
+src/app/documents/vacancy/page.tsx(98,39): error TS18046: 'u' is of type 'unknown'.
+src/app/layout.tsx(17,19): error TS2339: Property 'companyName' does not exist on type 'Promise<OfficeSettings>'.
+src/app/layout.tsx(18,52): error TS2339: Property 'companyName' does not exist on type 'Promise<OfficeSettings>'.
+src/app/layout.tsx(19,29): error TS2339: Property 'companyShort' does not exist on type 'Promise<OfficeSettings>'.
+src/app/layout.tsx(23,21): error TS2339: Property 'companyShort' does not exist on type 'Promise<OfficeSettings>'.
+src/app/page.tsx(17,24): error TS2339: Property 'favorites' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(18,13): error TS2339: Property 'favorites' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(19,13): error TS2339: Property 'properties' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(22,11): error TS2339: Property 'unitCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(22,45): error TS2339: Property 'occupied' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(22,62): error TS2339: Property 'unitCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(23,35): error TS2339: Property 'monthCollected' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(23,58): error TS2339: Property 'overdueAmount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(24,56): error TS2339: Property 'monthCollected' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(36,20): error TS2339: Property 'monthLabel' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(52,43): error TS2339: Property 'collectedAmount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(66,26): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(68,47): error TS2339: Property 'overdueAmount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(83,26): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(97,43): error TS2339: Property 'monthCollected' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(117,47): error TS2339: Property 'weekSeries' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(130,26): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/page.tsx(214,45): error TS2339: Property 'collectedAmount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(217,28): error TS2339: Property 'collectionsCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(217,60): error TS2339: Property 'collectionsCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(221,26): error TS2339: Property 'monthLabel' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(225,56): error TS2339: Property 'collectionsCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(239,45): error TS2339: Property 'overdueAmount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(242,28): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(250,56): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(250,81): error TS2339: Property 'tenantCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(285,58): error TS2339: Property 'monthCollected' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(290,47): error TS2339: Property 'weekSeries' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(298,24): error TS2339: Property 'unitCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(302,35): error TS2339: Property 'occupied' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(303,33): error TS2339: Property 'vacancies' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(304,36): error TS2339: Property 'unitCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(312,37): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(313,46): error TS2339: Property 'overdueAmount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(318,37): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(324,37): error TS2339: Property 'vacancies' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(346,30): error TS2339: Property 'overdue' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(346,71): error TS2339: Property 'overdueAmount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(351,30): error TS2339: Property 'dueSoon' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(361,30): error TS2339: Property 'vacancies' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(371,30): error TS2339: Property 'propertyCount' does not exist on type 'Promise<{ overdue: number; dueSoon: number; overdueAmount: number; overdueSkipped: number; vacancies: number; occupied: number; unitCount: number; tenantCount: number; propertyCount: number; collectionsCount: number; ... 6 more ...; weekSeries: { ...; }[]; }>'.
+src/app/page.tsx(381,42): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/pay/[tenancyId]/page.tsx(15,16): error TS2339: Property 'tenancy' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(15,35): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(15,53): error TS2339: Property 'property' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(18,16): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<Payment[]>'.
+  Property '0' does not exist on type 'Promise<Payment[]>'.
+src/app/pay/[tenancyId]/page.tsx(22,24): error TS2339: Property 'tenancy' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(37,25): error TS2339: Property 'tenancy' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(38,24): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(39,26): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(40,25): error TS2339: Property 'units' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(40,36): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/pay/[tenancyId]/page.tsx(41,28): error TS2339: Property 'property' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(42,25): error TS2339: Property 'tenancy' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/pay/[tenancyId]/page.tsx(43,22): error TS2339: Property 'tenancy' does not exist on type 'Promise<{ tenancy: Tenancy; tenant: Tenant | undefined; units: Unit[]; property: Property | null | undefined; landlord: Landlord | null | undefined; payments: Payment[]; receiptMap: Record<...>; } | null>'.
+src/app/properties/[id]/round/page.tsx(43,11): error TS2339: Property 'property' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/properties/[id]/round/page.tsx(43,21): error TS2339: Property 'landlord' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/properties/[id]/round/page.tsx(43,31): error TS2339: Property 'rows' does not exist on type 'Promise<{ property: Property; landlord: Landlord | undefined; rows: { unit: Unit; tenancy: Tenancy | null; tenant: Tenant | null; photos: UnitPhoto[]; dueState: "skip" | ... 2 more ... | "ok"; daysOverdue: number; }[]; } | null>'.
+src/app/properties/[id]/round/page.tsx(44,36): error TS2339: Property 'map' does not exist on type 'Promise<Landlord[]>'.
+src/app/properties/[id]/round/page.tsx(44,41): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(46,32): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(47,32): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(48,31): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(49,33): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(53,22): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(55,24): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(57,26): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(61,10): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/properties/[id]/round/page.tsx(181,23): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/app/properties/page.tsx(25,28): error TS2339: Property 'filter' does not exist on type 'Promise<Property[]>'.
+src/app/properties/page.tsx(25,36): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/properties/page.tsx(26,9): error TS2339: Property 'sort' does not exist on type 'Promise<Property[]>'.
+src/app/properties/page.tsx(27,6): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/properties/page.tsx(27,9): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/properties/page.tsx(30,52): error TS2339: Property 'map' does not exist on type 'Promise<Landlord[]>'.
+src/app/properties/page.tsx(30,57): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/properties/page.tsx(31,29): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/properties/page.tsx(33,19): error TS2339: Property 'filter' does not exist on type 'Promise<Property[]>'.
+src/app/properties/page.tsx(33,27): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/properties/page.tsx(39,36): error TS2339: Property 'filter' does not exist on type 'Promise<Tenancy[]>'.
+src/app/properties/page.tsx(39,44): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/properties/page.tsx(40,57): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/properties/page.tsx(47,19): error TS2488: Type 'Promise<Unit[]>' must have a '[Symbol.iterator]()' method that returns an iterator.
+src/app/properties/page.tsx(55,24): error TS2339: Property 'find' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/properties/page.tsx(55,30): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/properties/page.tsx(70,26): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/properties/page.tsx(76,34): error TS2339: Property 'map' does not exist on type 'Promise<Landlord[]>'.
+src/app/properties/page.tsx(76,39): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/properties/page.tsx(96,16): error TS2339: Property 'map' does not exist on type 'Promise<Property[]>'.
+src/app/properties/page.tsx(96,21): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/properties/page.tsx(155,14): error TS2339: Property 'length' does not exist on type 'Promise<Property[]>'.
+src/app/receipts/[id]/page.tsx(26,16): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(26,35): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(26,54): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(26,72): error TS2339: Property 'property' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(29,42): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(30,29): error TS2339: Property 'units' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(30,47): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/receipts/[id]/page.tsx(31,31): error TS2339: Property 'landlord' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(32,36): error TS2339: Property 'full_name' does not exist on type 'Promise<Staff | undefined>'.
+src/app/receipts/[id]/page.tsx(34,23): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(35,24): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(37,26): error TS2339: Property 'property' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(39,20): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(40,25): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(41,23): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(42,20): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(58,33): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(58,64): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(61,31): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(70,19): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(73,64): error TS2339: Property 'role' does not exist on type 'Promise<Staff | undefined>'.
+src/app/receipts/[id]/page.tsx(81,19): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(84,40): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(94,42): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(103,52): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(104,50): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(111,29): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(112,26): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(113,30): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(114,31): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(116,32): error TS2339: Property 'property' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(118,29): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(119,31): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(120,29): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(121,26): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(122,26): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/page.tsx(124,37): error TS2339: Property 'role' does not exist on type 'Promise<Staff | undefined>'.
+src/app/receipts/[id]/page.tsx(125,25): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(41,16): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(41,35): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(41,54): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(41,72): error TS2339: Property 'property' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(44,42): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(45,29): error TS2339: Property 'units' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(45,47): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/receipts/[id]/pdf/route.ts(46,31): error TS2339: Property 'landlord' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(47,36): error TS2339: Property 'full_name' does not exist on type 'Promise<Staff | undefined>'.
+src/app/receipts/[id]/pdf/route.ts(49,37): error TS2345: Argument of type 'Promise<OfficeSettings>' is not assignable to parameter of type 'OfficeSettings'.
+  Type 'Promise<OfficeSettings>' is missing the following properties from type 'OfficeSettings': companyName, companyShort, tagline, phone, and 4 more.
+src/app/receipts/[id]/pdf/route.ts(50,25): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(73,24): error TS2339: Property 'companyName' does not exist on type 'Promise<OfficeSettings>'.
+src/app/receipts/[id]/pdf/route.ts(80,24): error TS2339: Property 'tagline' does not exist on type 'Promise<OfficeSettings>'.
+src/app/receipts/[id]/pdf/route.ts(97,21): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(106,42): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(150,34): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(157,37): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(158,39): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(158,84): error TS2339: Property 'payment' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(192,39): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(192,64): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(193,43): error TS2339: Property 'property' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(194,51): error TS2339: Property 'companyShort' does not exist on type 'Promise<OfficeSettings>'.
+src/app/receipts/[id]/pdf/route.ts(195,58): error TS2339: Property 'role' does not exist on type 'Promise<Staff | undefined>'.
+src/app/receipts/[id]/pdf/route.ts(195,76): error TS2339: Property 'companyName' does not exist on type 'Promise<OfficeSettings>'.
+src/app/receipts/[id]/pdf/route.ts(218,52): error TS2339: Property 'companyName' does not exist on type 'Promise<OfficeSettings>'.
+src/app/receipts/[id]/pdf/route.ts(242,16): error TS2339: Property 'role' does not exist on type 'Promise<Staff | undefined>'.
+src/app/receipts/[id]/pdf/route.ts(242,65): error TS2339: Property 'role' does not exist on type 'Promise<Staff | undefined>'.
+src/app/receipts/[id]/pdf/route.ts(260,24): error TS2339: Property 'tenant' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(268,27): error TS2339: Property 'companyName' does not exist on type 'Promise<OfficeSettings>'.
+src/app/receipts/[id]/pdf/route.ts(268,61): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/[id]/pdf/route.ts(284,28): error TS2339: Property 'receiptFooter' does not exist on type 'Promise<OfficeSettings>'.
+src/app/receipts/[id]/pdf/route.ts(307,62): error TS2339: Property 'receipt' does not exist on type 'Promise<{ tenancy?: Tenancy | undefined; tenant?: Tenant | undefined; units?: Unit[] | undefined; property?: Property | null | undefined; landlord?: Landlord | null | undefined; payments?: Payment[] | undefined; receiptMap?: Record<...> | undefined; receipt: Receipt; payment: Payment; } | null>'.
+src/app/receipts/page.tsx(22,34): error TS2339: Property 'filter' does not exist on type 'Promise<ReceiptListRow[]>'.
+src/app/receipts/page.tsx(22,42): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/app/receipts/page.tsx(55,30): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(56,38): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(58,64): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(61,21): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(61,43): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(62,21): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(62,50): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(63,21): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(64,21): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(69,79): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(74,21): error TS18046: 'r' is of type 'unknown'.
+src/app/receipts/page.tsx(79,20): error TS18046: 'r' is of type 'unknown'.
+src/app/settings/page.tsx(34,28): error TS2339: Property 'full_name' does not exist on type 'Promise<Staff | undefined>'.
+src/app/settings/page.tsx(35,25): error TS2339: Property 'phone' does not exist on type 'Promise<Staff | undefined>'.
+src/app/settings/page.tsx(36,25): error TS2339: Property 'email' does not exist on type 'Promise<Staff | undefined>'.
+src/app/settings/page.tsx(50,25): error TS2740: Type 'Promise<OfficeSettings>' is missing the following properties from type 'OfficeSettings': companyName, companyShort, tagline, phone, and 4 more.
+src/app/tenants/[id]/page.tsx(41,38): error TS2339: Property 'sort' does not exist on type 'Promise<Tenancy[]>'.
+src/app/tenants/[id]/page.tsx(41,44): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(41,47): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(46,31): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(47,54): error TS2339: Property 'map' does not exist on type 'Promise<Property[]>'.
+src/app/tenants/[id]/page.tsx(47,59): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(49,6): error TS2339: Property 'filter' does not exist on type 'Promise<Unit[]>'.
+src/app/tenants/[id]/page.tsx(49,14): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(50,11): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(56,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(56,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(59,15): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(61,27): error TS2339: Property 'map' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/tenants/[id]/page.tsx(61,32): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(61,59): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/tenants/[id]/page.tsx(62,38): error TS2339: Property 'map' does not exist on type 'Promise<Payment[]>'.
+src/app/tenants/[id]/page.tsx(62,43): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(69,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(69,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(76,23): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(79,20): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(80,20): error TS2339: Property 'phone_secondary' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(81,34): error TS2339: Property 'id_type' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(81,50): error TS2339: Property 'id_number' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(88,21): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(92,39): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(98,44): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(107,26): error TS2339: Property 'id' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(108,32): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(109,29): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(110,38): error TS2339: Property 'phone_secondary' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(111,30): error TS2339: Property 'id_type' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(112,32): error TS2339: Property 'id_number' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(113,29): error TS2339: Property 'notes' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(114,34): error TS2339: Property 'is_active' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(120,34): error TS2339: Property 'id' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(127,15): error TS2339: Property 'notes' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(129,19): error TS2339: Property 'notes' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(148,24): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(150,33): error TS2339: Property 'map' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/tenants/[id]/page.tsx(150,38): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(150,65): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/tenants/[id]/page.tsx(151,26): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<TenancyUnitLink[]>'.
+  Property '0' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/tenants/[id]/page.tsx(151,46): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<TenancyUnitLink[]>'.
+  Property '0' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/tenants/[id]/page.tsx(152,51): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/tenants/[id]/page.tsx(159,42): error TS2339: Property 'name' does not exist on type 'Promise<Property | undefined>'.
+src/app/tenants/[id]/page.tsx(179,56): error TS2339: Property 'id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/tenants/[id]/page.tsx(185,73): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/tenants/[id]/page.tsx(210,29): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(221,36): error TS2339: Property 'receipt_no' does not exist on type 'Promise<Receipt | undefined>'.
+src/app/tenants/[id]/page.tsx(222,36): error TS2339: Property 'status' does not exist on type 'Promise<Receipt | undefined>'.
+src/app/tenants/[id]/page.tsx(232,57): error TS2339: Property 'full_name' does not exist on type 'Promise<Staff | undefined>'.
+src/app/tenants/[id]/page.tsx(232,75): error TS2339: Property 'role' does not exist on type 'Promise<Staff | undefined>'.
+src/app/tenants/[id]/page.tsx(241,62): error TS2339: Property 'id' does not exist on type 'Promise<Receipt | undefined>'.
+src/app/tenants/[id]/page.tsx(245,54): error TS2339: Property 'id' does not exist on type 'Promise<Receipt | undefined>'.
+src/app/tenants/[id]/page.tsx(263,19): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(270,24): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(271,21): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(274,20): error TS2339: Property 'map' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/tenants/[id]/page.tsx(274,25): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/tenants/[id]/page.tsx(274,52): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/tenants/page.tsx(46,19): error TS2488: Type 'Promise<Tenancy[]>' must have a '[Symbol.iterator]()' method that returns an iterator.
+src/app/tenants/page.tsx(49,25): error TS2339: Property 'map' does not exist on type 'Promise<TenancyUnitLink[]>'.
+src/app/tenants/page.tsx(49,30): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/app/tenants/page.tsx(51,45): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/tenants/page.tsx(53,25): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/tenants/page.tsx(54,29): error TS2339: Property 'name' does not exist on type 'Promise<Property | undefined>'.
+src/app/tenants/page.tsx(64,30): error TS2339: Property 'sort' does not exist on type 'Promise<Tenant[]>'.
+src/app/tenants/page.tsx(64,36): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/tenants/page.tsx(64,39): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/tenants/page.tsx(67,8): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/page.tsx(75,36): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/page.tsx(76,39): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/tenants/page.tsx(88,6): error TS2339: Property 'filter' does not exist on type 'Promise<Unit[]>'.
+src/app/tenants/page.tsx(88,14): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/tenants/page.tsx(89,11): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/app/tenants/page.tsx(90,36): error TS2339: Property 'find' does not exist on type 'Promise<Property[]>'.
+src/app/tenants/page.tsx(90,42): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/tenants/page.tsx(99,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/tenants/page.tsx(99,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/tenants/page.tsx(131,45): error TS18046: 't' is of type 'unknown'.
+src/app/tenants/page.tsx(133,32): error TS18046: 't' is of type 'unknown'.
+src/app/tenants/page.tsx(134,39): error TS18046: 't' is of type 'unknown'.
+src/app/tenants/page.tsx(136,66): error TS18046: 't' is of type 'unknown'.
+src/app/tenants/page.tsx(138,23): error TS18046: 't' is of type 'unknown'.
+src/app/tenants/page.tsx(138,60): error TS18046: 't' is of type 'unknown'.
+src/app/tenants/page.tsx(138,71): error TS18046: 't' is of type 'unknown'.
+src/app/units/[id]/page.tsx(37,38): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(42,19): error TS2488: Type 'Promise<TenancyUnitLink[]>' must have a '[Symbol.iterator]()' method that returns an iterator.
+src/app/units/[id]/page.tsx(44,12): error TS2339: Property 'status' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(46,29): error TS2339: Property 'tenant_id' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(53,8): error TS2339: Property 'filter' does not exist on type 'Promise<Tenancy[]>'.
+src/app/units/[id]/page.tsx(53,16): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(54,13): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(57,6): error TS2339: Property 'filter' does not exist on type 'Promise<Tenant[]>'.
+src/app/units/[id]/page.tsx(57,14): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(58,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(58,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(59,11): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(67,12): error TS2339: Property 'filter' does not exist on type 'Promise<Tenant[]>'.
+src/app/units/[id]/page.tsx(67,20): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(68,18): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(68,21): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(69,17): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(74,25): error TS2339: Property 'status' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(76,29): error TS2339: Property 'name' does not exist on type 'Promise<Property | undefined>'.
+src/app/units/[id]/page.tsx(77,20): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(78,20): error TS2339: Property 'type' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(79,22): error TS2339: Property 'asking_rent_gmd' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(80,15): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Promise<UnitPhoto[]>'.
+  Property '0' does not exist on type 'Promise<UnitPhoto[]>'.
+src/app/units/[id]/page.tsx(87,14): error TS2339: Property 'status' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(91,43): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(93,28): error TS2339: Property 'name' does not exist on type 'Promise<Property | undefined>'.
+src/app/units/[id]/page.tsx(94,21): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(96,16): error TS2339: Property 'type' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(97,16): error TS2339: Property 'asking_rent_gmd' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(97,67): error TS2339: Property 'asking_rent_gmd' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(105,26): error TS2339: Property 'id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(106,28): error TS2339: Property 'code' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(107,28): error TS2339: Property 'type' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(108,30): error TS2339: Property 'status' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(109,37): error TS2339: Property 'asking_rent_gmd' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(110,29): error TS2339: Property 'notes' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(117,32): error TS2339: Property 'id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(118,47): error TS2339: Property 'property_id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(121,47): error TS2339: Property 'id' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(135,24): error TS2339: Property 'id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(137,31): error TS2339: Property 'asking_rent_gmd' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(147,78): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/units/[id]/page.tsx(148,61): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/units/[id]/page.tsx(150,32): error TS2339: Property 'amount_gmd' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(150,68): error TS2339: Property 'period' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(151,22): error TS2339: Property 'next_due' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(154,40): error TS2339: Property 'balance_gmd' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(155,22): error TS2339: Property 'deposit_gmd' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(155,76): error TS2339: Property 'deposit_gmd' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(159,40): error TS2339: Property 'id' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/units/[id]/page.tsx(164,21): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/units/[id]/page.tsx(168,39): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/units/[id]/page.tsx(174,44): error TS2339: Property 'phone' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/units/[id]/page.tsx(184,50): error TS2339: Property 'id' does not exist on type 'Promise<Tenancy | undefined>'.
+src/app/units/[id]/page.tsx(184,73): error TS2339: Property 'full_name' does not exist on type 'Promise<Tenant | undefined>'.
+src/app/units/[id]/page.tsx(192,26): error TS2339: Property 'status' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(196,28): error TS2339: Property 'id' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(198,35): error TS2339: Property 'asking_rent_gmd' does not exist on type 'Promise<Unit | undefined>'.
+src/app/units/[id]/page.tsx(209,19): error TS2339: Property 'map' does not exist on type 'Promise<UnitPhoto[]>'.
+src/app/units/[id]/page.tsx(209,24): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/units/[id]/page.tsx(213,19): error TS2339: Property 'length' does not exist on type 'Promise<UnitPhoto[]>'.
+src/app/units/[id]/page.tsx(215,41): error TS2339: Property 'id' does not exist on type 'Promise<Unit | undefined>'.
+src/lib/importer.ts(1,27): error TS2307: Cannot find module '../../../packages/import/src/importer' or its corresponding type declarations.

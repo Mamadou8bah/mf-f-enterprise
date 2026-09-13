@@ -1,0 +1,18 @@
+# Office desk (Next.js). Deploy this folder as its own Netlify site.
+
+[build]
+  command = "npm install && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Netlify UI → Environment variables (required):
+#   DATABASE_URL     Neon pooled URL (?sslmode=require&pgbouncer=true&connect_timeout=30)
+#   NEXTAUTH_URL     Public desk URL (https://…)
+#   NEXTAUTH_SECRET  Long random string (openssl rand -base64 32)
+# Optional for CLI schema work only (not required at runtime):
+#   DIRECT_URL
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

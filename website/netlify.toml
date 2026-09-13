@@ -1,0 +1,16 @@
+# Public marketing site (Vite + React). Deploy this folder as its own Netlify site.
+# Only talks to the desk via GET {VITE_API_BASE}/api/public/vacancies
+
+[build]
+  command = "npm install && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Set in Netlify UI:
+  # VITE_API_BASE = https://your-desk-app-url
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

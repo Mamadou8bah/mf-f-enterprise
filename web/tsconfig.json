@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@garawol/db": ["./packages/db/src/index.ts"],
+      "@garawol/db/*": ["./packages/db/src/*"],
+      "@garawol/shared": ["./packages/shared/src/index.ts"],
+      "@garawol/shared/*": ["./packages/shared/src/*"],
+      "@garawol/import": ["./packages/import/src/importer.ts"],
+      "@garawol/import/*": ["./packages/import/src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "packages/db/drizzle.config.ts"]
+}

@@ -1,0 +1,253 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Staff {
+  id             String    @id @default(cuid())
+  fullName       String    @map("full_name")
+  phone          String?
+  email          String    @unique
+  passwordHash   String    @map("password_hash")
+  role           String    @default("collector")
+  isActive       Boolean   @default(true) @map("is_active")
+  propertyScope  String?   @map("property_scope")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  payments       Payment[] @relation("RecordedBy")
+  voidedReceipts Receipt[] @relation("VoidedBy")
+  auditLogs      AuditLog[]
+
+  @@map("staff")
+}
+
+model Landlord {
+  id              String     @id @default(cuid())
+  fullName        String     @map("full_name")
+  displayTitle    String?    @map("display_title")
+  phone           String?
+  phoneSecondary  String?    @map("phone_secondary")
+  email           String?
+  address         String?
+  notes           String?
+  bankName        String?    @map("bank_name")
+  bankAccountName String?    @map("bank_account_name")
+  bankAccountNo   String?    @map("bank_account_no")
+  isActive        Boolean    @default(true) @map("is_active")
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+  properties      Property[]
+
+  @@map("landlords")
+}
+
+model Property {
+  id         String   @id @default(cuid())
+  landlordId String   @map("landlord_id")
+  name       String
+  area       String?
+  address    String?
+  type       String   @default("mixed")
+  notes      String?
+  isFavorite Boolean  @default(false) @map("is_favorite")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  landlord   Landlord @relation(fields: [landlordId], references: [id])
+  units      Unit[]
+
+  @@map("properties")
+}
+
+model Unit {
+  id            String         @id @default(cuid())
+  propertyId    String         @map("property_id")
+  code          String
+  type          String         @default("shop")
+  status        String         @default("vacant")
+  askingRentGmd Int?           @map("asking_rent_gmd")
+  notes         String?
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+  property      Property       @relation(fields: [propertyId], references: [id])
+  photos        UnitPhoto[]
+  tenancyUnits  TenancyUnit[]
+  importFlags   ImportFlag[]
+
+  @@unique([propertyId, code])
+  @@map("units")
+}
+
+model UnitPhoto {
+  id        String   @id @default(cuid())
+  unitId    String   @map("unit_id")
+  url       String
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  unit      Unit     @relation(fields: [unitId], references: [id], onDelete: Cascade)
+
+  @@map("unit_photos")
+}
+
+model Tenant {
+  id             String    @id @default(cuid())
+  fullName       String    @map("full_name")
+  phone          String?
+  phoneSecondary String?   @map("phone_secondary")
+  idType         String?   @map("id_type")
+  idNumber       String?   @map("id_number")
+  notes          String?
+  isActive       Boolean   @default(true) @map("is_active")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  tenancies      Tenancy[]
+
+  @@map("tenants")
+}
+
+model Tenancy {
+  id             String         @id @default(cuid())
+  tenantId       String         @map("tenant_id")
+  amountGmd      Int            @default(0) @map("amount_gmd")
+  period         String         @default("monthly")
+  startDate      String?        @map("start_date")
+  nextDue        String?        @map("next_due")
+  balanceGmd     Int            @default(0) @map("balance_gmd")
+  depositGmd     Int?           @map("deposit_gmd")
+  status         String         @default("active")
+  notes          String?
+  createdAt      DateTime       @default(now()) @map("created_at")
+  updatedAt      DateTime       @updatedAt @map("updated_at")
+  tenant         Tenant         @relation(fields: [tenantId], references: [id])
+  units          TenancyUnit[]
+  payments       Payment[]
+  importFlags    ImportFlag[]
+  paymentRequests PaymentRequest[]
+
+  @@map("tenancies")
+}
+
+model TenancyUnit {
+  id        String  @id @default(cuid())
+  tenancyId String  @map("tenancy_id")
+  unitId    String  @map("unit_id")
+  tenancy   Tenancy @relation(fields: [tenancyId], references: [id], onDelete: Cascade)
+  unit      Unit    @relation(fields: [unitId], references: [id])
+
+  @@unique([tenancyId, unitId])
+  @@map("tenancy_units")
+}
+
+model Payment {
+  id             String   @id @default(cuid())
+  tenancyId      String   @map("tenancy_id")
+  amountGmd      Int      @map("amount_gmd")
+  paidAt         String   @map("paid_at")
+  periodStart    String   @map("period_start")
+  periodEnd      String   @map("period_end")
+  method         String   @default("cash")
+  recordedById   String   @map("recorded_by")
+  syncStatus     String   @default("synced") @map("sync_status")
+  localReceiptNo String?  @map("local_receipt_no")
+  notes          String?
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  tenancy        Tenancy  @relation(fields: [tenancyId], references: [id])
+  recordedBy     Staff    @relation("RecordedBy", fields: [recordedById], references: [id])
+  receipt        Receipt?
+
+  @@map("payments")
+}
+
+model Receipt {
+  id         String    @id @default(cuid())
+  paymentId  String    @unique @map("payment_id")
+  receiptNo  String    @unique @map("receipt_no")
+  status     String    @default("issued")
+  voidedAt   DateTime? @map("voided_at")
+  voidedById String?   @map("voided_by")
+  voidReason String?   @map("void_reason")
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+  payment    Payment   @relation(fields: [paymentId], references: [id])
+  voidedBy   Staff?    @relation("VoidedBy", fields: [voidedById], references: [id])
+
+  @@map("receipts")
+}
+
+model ReceiptCounter {
+  year      Int @id
+  lastValue Int @default(0) @map("last_value")
+
+  @@map("receipt_counters")
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  staffId    String?  @map("staff_id")
+  action     String
+  entityType String   @map("entity_type")
+  entityId   String   @map("entity_id")
+  detail     String?
+  createdAt  DateTime @default(now()) @map("created_at")
+  staff      Staff?   @relation(fields: [staffId], references: [id])
+
+  @@map("audit_logs")
+}
+
+model ImportFlag {
+  id         String   @id @default(cuid())
+  sourceFile String   @map("source_file")
+  rawText    String?  @map("raw_text")
+  reason     String
+  resolved   Boolean  @default(false)
+  tenancyId  String?  @map("tenancy_id")
+  unitId     String?  @map("unit_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  tenancy    Tenancy? @relation(fields: [tenancyId], references: [id])
+  unit       Unit?    @relation(fields: [unitId], references: [id])
+
+  @@map("import_flags")
+}
+
+model PaymentRequest {
+  id          String   @id @default(cuid())
+  tenancyId   String   @map("tenancy_id")
+  amountGmd   Int      @map("amount_gmd")
+  status      String   @default("draft")
+  externalRef String?  @map("external_ref")
+  linkUrl     String?  @map("link_url")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  tenancy     Tenancy  @relation(fields: [tenancyId], references: [id])
+
+  @@map("payment_requests")
+}
+
+model OfficeSettings {
+  id            String   @id
+  companyName   String   @map("company_name")
+  companyShort  String   @map("company_short")
+  tagline       String?
+  phone         String?
+  email         String?
+  address       String?
+  receiptPrefix String   @map("receipt_prefix")
+  receiptFooter String?  @map("receipt_footer")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@map("office_settings")
+}
+
+model SyncMeta {
+  key   String @id
+  value String
+
+  @@map("sync_meta")
+}
