@@ -39,11 +39,11 @@ export async function generateMetadata(): Promise<Metadata> {
     formatDetection: { telephone: false },
     icons: {
       icon: [
-        { url: "/icon.svg", type: "image/svg+xml" },
-        { url: "/mf_logo.png", type: "image/png" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+        { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
       ],
-      apple: [{ url: "/mf_logo.png" }],
-      shortcut: ["/mf_logo.png"],
+      apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
+      shortcut: ["/icon-192.png"],
     },
     openGraph: {
       type: "website",

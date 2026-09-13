@@ -1,14 +1,14 @@
 /* MF & F Enterprise — installable PWA service worker (production) */
-const VERSION = "mff-v2";
+const VERSION = "mff-v3";
 const PRECACHE = `${VERSION}-shell`;
 const RUNTIME = `${VERSION}-runtime`;
 
 const SHELL = [
   "/offline",
   "/manifest.webmanifest",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/icons/apple-touch-icon.png",
+  "/icon-192.png",
+  "/icon-512.png",
+  "/icon-maskable-512.png",
   "/mf_logo.png",
 ];
 
@@ -42,7 +42,6 @@ function isApiOrAuth(url) {
 
 function isStaticAsset(url) {
   return (
-    url.pathname.startsWith("/icons/") ||
     url.pathname.endsWith(".webmanifest") ||
     url.pathname.endsWith(".png") ||
     url.pathname.endsWith(".svg") ||

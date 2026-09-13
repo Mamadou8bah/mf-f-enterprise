@@ -21,7 +21,7 @@ export async function POST(req: Request) {
       fullName: body.fullName,
       email: String(body.email).toLowerCase().trim(),
       passwordHash,
-      role: body.role === "admin" ? "admin" : "collector",
+      role: "collector",
       isActive: true,
     },
   });
@@ -41,7 +41,7 @@ export async function PATCH(req: Request) {
     await updateStaff(body.id, {
       fullName: body.fullName,
       email: body.email,
-      role: body.role === "admin" ? "admin" : body.role === "collector" ? "collector" : undefined,
+      role: "collector",
       isActive: body.isActive,
       staffId: session.user.id,
     });

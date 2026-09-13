@@ -10,7 +10,6 @@ export function CreateStaffForm() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("collector");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -23,13 +22,13 @@ export function CreateStaffForm() {
   return (
     <>
       <button type="button" className="btn-primary" onClick={() => setOpen(true)}>
-        + Add office account
+        + Add secretary
       </button>
       <Modal
         open={open}
         onClose={close}
-        title="Add office account"
-        description="Owner and Secretary sign-ins"
+        title="Add secretary"
+        description="Desk sign-in for payments and receipts"
         preventClose={loading}
       >
         <form
@@ -41,7 +40,12 @@ export function CreateStaffForm() {
             const res = await fetch("/api/admin/staff", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ fullName, email, password, role }),
+              body: JSON.stringify({
+                fullName,
+                email,
+                password,
+                role: "collector",
+              }),
             });
             setLoading(false);
             if (!res.ok) {
@@ -87,13 +91,6 @@ export function CreateStaffForm() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
-          <div>
-            <label className="label">Role</label>
-            <select className="field" value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="collector">Secretary — desk, payments, receipts</option>
-              <option value="admin">Owner — full access + settings</option>
-            </select>
           </div>
           {error && <p className="text-sm font-semibold text-red-800">{error}</p>}
           <div className="flex flex-col gap-2 sm:flex-row-reverse">

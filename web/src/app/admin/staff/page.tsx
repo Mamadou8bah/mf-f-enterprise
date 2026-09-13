@@ -1,6 +1,6 @@
 import { requireAdmin } from "@/lib/session";
 import { allStaff } from "@/lib/data";
-import { roleLabel } from "@/lib/roles";
+import { roleLabel, isOwnerRole } from "@/lib/roles";
 import { CreateStaffForm } from "@/components/admin/CreateStaffForm";
 import { EditStaffForm } from "@/components/admin/EditStaffForm";
 import {
@@ -24,7 +24,7 @@ export default async function StaffAdminPage({
   const sp = await searchParams;
   const q = (sp.q || "").trim();
   const term = q.toLowerCase();
-  const all = await allStaff();
+  const all = (await allStaff()).filter((s) => !isOwnerRole(s.role));
   const list = all.filter((s) =>
     matchesQuery(term, s.full_name, s.email, s.phone, s.role)
   );
@@ -35,10 +35,10 @@ export default async function StaffAdminPage({
       <PageHeader
         eyebrow="Accounts"
         title="Office users"
-        description="Owner and Secretary sign-ins"
+        description="Secretary sign-ins for the desk. The Owner account is not listed here."
         actions={<CreateStaffForm />}
       />
-      <PageSearch initialQ={q} placeholder="Search this list by name, email, or role…" />
+      <PageSearch initialQ={q} placeholder="Search this list by name or email…" />
       <SoftList>
         {list.map((s) => (
           <SoftListItem key={s.id}>
@@ -59,7 +59,7 @@ export default async function StaffAdminPage({
         ))}
         {list.length === 0 && (
           <li className="p-8 text-center text-sm text-garawol-muted">
-            {q ? `No users match “${q}”.` : "No office users yet."}
+            {q ? `No users match “${q}”.` : "No secretary accounts yet."}
           </li>
         )}
       </SoftList>

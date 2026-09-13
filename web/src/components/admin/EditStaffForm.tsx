@@ -20,7 +20,6 @@ export function EditStaffForm({
   const [open, setOpen] = useState(false);
   const [fullName, setFullName] = useState(staff.fullName);
   const [email, setEmail] = useState(staff.email);
-  const [role, setRole] = useState(staff.role === "admin" ? "admin" : "collector");
   const [isActive, setIsActive] = useState(staff.isActive);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -42,13 +41,13 @@ export function EditStaffForm({
       </button>
       <ConfirmDeleteButton
         label="Delete"
-        title="Delete office user?"
+        title="Delete secretary?"
         description="If they recorded payments, they will be deactivated instead of removed."
         endpoint="/api/admin/staff"
         body={{ id: staff.id }}
         className="rounded-full bg-red-50 px-3 py-2 text-sm font-semibold text-red-800"
       />
-      <Modal open={open} onClose={close} title="Edit office user" preventClose={loading}>
+      <Modal open={open} onClose={close} title="Edit secretary" preventClose={loading}>
         <form
           className="space-y-4"
           onSubmit={async (e) => {
@@ -58,7 +57,13 @@ export function EditStaffForm({
             const res = await fetch("/api/admin/staff", {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ id: staff.id, fullName, email, role, isActive }),
+              body: JSON.stringify({
+                id: staff.id,
+                fullName,
+                email,
+                role: "collector",
+                isActive,
+              }),
             });
             const data = await res.json();
             setLoading(false);
@@ -78,15 +83,13 @@ export function EditStaffForm({
             <label className="label">Email</label>
             <input className="field" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
-          <div>
-            <label className="label">Role</label>
-            <select className="field" value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="collector">Secretary</option>
-              <option value="admin">Owner</option>
-            </select>
-          </div>
           <label className="flex min-h-12 items-center gap-3 rounded-2xl bg-garawol-mist px-4 py-3 text-sm font-semibold">
-            <input type="checkbox" checked={isActive} onChange={(e) => setIsActive(e.target.checked)} className="h-5 w-5" />
+            <input
+              type="checkbox"
+              checked={isActive}
+              onChange={(e) => setIsActive(e.target.checked)}
+              className="h-5 w-5"
+            />
             Can sign in
           </label>
           {error && <p className="text-sm text-red-700">{error}</p>}

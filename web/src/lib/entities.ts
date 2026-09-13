@@ -14,6 +14,7 @@ import {
   unitsByProperty,
 } from "@/lib/data";
 import { endTenancy } from "@/lib/occupancy";
+import { isOwnerRole } from "@/lib/roles";
 
 export async function updateProperty(
   id: string,
@@ -205,13 +206,27 @@ export async function updateStaff(
 ) {
   const staff = await findStaffById(id);
   if (!staff) throw new Error("User not found");
+
+  const nextRole = input.role ?? (staff.role as "admin" | "collector");
+  const nextActive =
+    input.isActive === undefined ? !!staff.is_active : input.isActive;
+
+  if (isOwnerRole(staff.role)) {
+    if (!isOwnerRole(nextRole)) {
+      throw new Error("Owner accounts cannot be changed to Secretary");
+    }
+    if (!nextActive) {
+      throw new Error("Owner accounts cannot be deactivated");
+    }
+  }
+
   await prisma.staff.update({
     where: { id },
     data: {
       fullName: input.fullName?.trim() ?? staff.full_name,
       email: input.email ? String(input.email).toLowerCase().trim() : staff.email,
-      role: input.role ?? staff.role,
-      isActive: input.isActive === undefined ? !!staff.is_active : input.isActive,
+      role: nextRole,
+      isActive: nextActive,
     },
   });
   await insertAudit(randomUUID(), input.staffId || null, "staff.update", "staff", id, null);
@@ -221,6 +236,9 @@ export async function deleteStaff(id: string, actorId?: string | null) {
   if (actorId && actorId === id) throw new Error("You cannot delete your own account");
   const staff = await findStaffById(id);
   if (!staff) throw new Error("User not found");
+  if (isOwnerRole(staff.role)) {
+    throw new Error("Owner accounts cannot be deleted");
+  }
   const payments = await prisma.payment.count({ where: { recordedById: id } });
   if (payments > 0) {
     await prisma.staff.update({
