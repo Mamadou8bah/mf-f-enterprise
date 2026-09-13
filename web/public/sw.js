@@ -1,5 +1,5 @@
 /* MF & F Enterprise — installable PWA service worker (production) */
-const VERSION = "mff-v3";
+const VERSION = "mff-v4";
 const PRECACHE = `${VERSION}-shell`;
 const RUNTIME = `${VERSION}-runtime`;
 
@@ -9,15 +9,26 @@ const SHELL = [
   "/icon-192.png",
   "/icon-512.png",
   "/icon-maskable-512.png",
+  "/apple-touch-icon.png",
   "/mf_logo.png",
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches
-      .open(PRECACHE)
-      .then((cache) => cache.addAll(SHELL))
-      .then(() => self.skipWaiting())
+    (async () => {
+      const cache = await caches.open(PRECACHE);
+      // Precache each asset independently so one 404 does not block installability.
+      await Promise.all(
+        SHELL.map(async (url) => {
+          try {
+            await cache.add(url);
+          } catch {
+            /* ignore missing optional assets */
+          }
+        })
+      );
+      await self.skipWaiting();
+    })()
   );
 });
 
@@ -55,7 +66,6 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
-  // Never cache Next.js bundles / RSC / HMR — always network
   if (isNextBundle(url) || isApiOrAuth(url)) return;
 
   if (request.mode === "navigate") {

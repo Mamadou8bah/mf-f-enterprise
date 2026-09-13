@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { COMPANY_NAME } from "@/lib/brand";
+import { InstallPwaButton } from "@/components/InstallPwaButton";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -93,6 +94,9 @@ export default function LoginPage() {
               {loading ? "Signing in…" : "Sign in"}
             </button>
           </form>
+          <div className="mt-4">
+            <InstallPwaButton />
+          </div>
         </div>
       </div>
     </div>

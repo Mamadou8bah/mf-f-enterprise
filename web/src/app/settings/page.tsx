@@ -5,6 +5,7 @@ import { roleLabel } from "@/lib/roles";
 import { PageHeader, PageShell, SoftCard, NavCard } from "@/components/ui";
 import { AccountForm } from "@/components/settings/AccountForm";
 import { OfficeForm } from "@/components/settings/OfficeForm";
+import { InstallPwaButton } from "@/components/InstallPwaButton";
 
 export const dynamic = "force-dynamic";
 
@@ -36,6 +37,16 @@ export default async function SettingsPage() {
           email={staff?.email || session.user.email || ""}
           roleLabel={roleLabel(session.user.role)}
         />
+      </SoftCard>
+
+      <SoftCard>
+        <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-garawol-muted">
+          Install on this phone
+        </h2>
+        <p className="mb-4 text-sm text-garawol-muted">
+          Add the desk as an app with the MF &amp; F logo on your home screen.
+        </p>
+        <InstallPwaButton />
       </SoftCard>
 
       {isAdmin && (

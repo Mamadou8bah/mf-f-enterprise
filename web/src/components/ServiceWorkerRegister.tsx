@@ -22,9 +22,14 @@ export function ServiceWorkerRegister() {
     }
 
     const register = () => {
-      navigator.serviceWorker.register("/sw.js").catch(() => {
-        /* ignore — needs HTTPS outside localhost */
-      });
+      navigator.serviceWorker
+        .register("/sw.js", { scope: "/", updateViaCache: "none" })
+        .then((reg) => {
+          void reg.update();
+        })
+        .catch(() => {
+          /* ignore — needs HTTPS outside localhost */
+        });
     };
     if (document.readyState === "complete") register();
     else window.addEventListener("load", register, { once: true });
