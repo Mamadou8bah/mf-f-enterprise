@@ -2,14 +2,15 @@
 # Only talks to the desk via GET {VITE_API_BASE}/api/public/vacancies
 
 [build]
-  command = "npm install && npm run build"
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
-# Set in Netlify UI (build-time):
-#   VITE_API_BASE = https://your-desk-app-url
-#   VITE_SITE_URL = https://your-public-website-url
+  NPM_VERSION = "10.9.8"
+# Set in Netlify UI (build-time — Vite bakes these in):
+#   VITE_API_BASE = https://mffenterprise.netlify.app
+#   VITE_SITE_URL = https://your-website-url.netlify.app
 
 [[redirects]]
   from = "/*"
