@@ -2,22 +2,14 @@ import { NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import { denyUnlessOwner } from "@/lib/session";
 import { prisma } from "@garawol/db";
 import { findProperty } from "@/lib/data";
 import { deleteProperty, updateProperty } from "@/lib/entities";
-import { isOwnerRole } from "@/lib/roles";
-
-function requireAdminSession(session: Awaited<ReturnType<typeof getServerSession>>) {
-  if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  if (!isOwnerRole(session.user.role)) {
-    return NextResponse.json({ error: "Admin only" }, { status: 403 });
-  }
-  return null;
-}
 
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
-  const denied = requireAdminSession(session);
+  const denied = denyUnlessOwner(session);
   if (denied) return denied;
   const body = await req.json();
   if (!body?.name || !body?.landlordId) {
@@ -39,7 +31,7 @@ export async function POST(req: Request) {
 
 export async function PATCH(req: Request) {
   const session = await getServerSession(authOptions);
-  const denied = requireAdminSession(session);
+  const denied = denyUnlessOwner(session);
   if (denied) return denied;
   const body = await req.json();
   if (!body?.id || !(await findProperty(body.id))) {
@@ -75,7 +67,7 @@ export async function PATCH(req: Request) {
 
 export async function DELETE(req: Request) {
   const session = await getServerSession(authOptions);
-  const denied = requireAdminSession(session);
+  const denied = denyUnlessOwner(session);
   if (denied) return denied;
   const body = await req.json().catch(() => ({}));
   const id = body?.id || new URL(req.url).searchParams.get("id");
