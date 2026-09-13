@@ -1,27 +1,58 @@
 # MF & F Enterprise
 
-Only two apps at the repo root:
+Office system for **MF & F Enterprise** — record rent at the desk, issue receipts, manage tenants and units, and publish vacant rooms on the public website.
 
-| App | Folder | Stack | Role |
-|-----|--------|--------|------|
-| **Desk** | `web/` | Next.js + Prisma | Staff login, payments, receipts |
-| **Website** | `website/` | Vite + React | Public marketing + vacant listings |
+## Apps
 
-They do not share runtime code. The website only calls:
+| App | Folder | Purpose |
+|-----|--------|---------|
+| **Desk** | `web/` | Staff work — payments, receipts, tenants, due lists, settings |
+| **Website** | `website/` | Public site — company presence and vacant listings |
 
-`GET {desk}/api/public/vacancies`
+## Who signs in
 
-## Desk (`web/`)
+| Role | Demo login | Access |
+|------|------------|--------|
+| **Owner** | `admin@garawol.gm` | Full desk plus settings |
+| **Secretary** | `secretary@garawol.gm` | Counter work — payments, receipts, tenants, due & overdue |
 
-Requires Neon Postgres URLs in `web/.env.local` and `web/packages/db/.env`:
+Demo password for both: `garawol123`  
+Change these before handing over to the client.
 
-- `DATABASE_URL` — pooled (`…-pooler…`) with `sslmode=require&pgbouncer=true&connect_timeout=30`
-- `DIRECT_URL` — non-pooler host (for `db:push` / migrate)
+## What the desk does
 
-If the desk shows “Can't reach database server”, Neon may be waking from idle — refresh once, or restart `npm run dev`.
+- Find a tenant and record payment
+- Print or share official receipts
+- Register tenants, assign units, mark move-out
+- See vacant rooms and occupancy
+- See rent due in 7 days and overdue
+- Daily cash-up and settlement reports
+- Owner settings for the portfolio and office accounts
+
+## Setup
+
+You need **Node.js** and a **Postgres** database.
+
+### 1. Desk
 
 ```bash
 cd web
+cp .env.example .env.local
+cp .env.example packages/db/.env
+```
+
+Fill in both env files (same values are fine for local work):
+
+| Variable | Purpose |
+|----------|---------|
+| `DATABASE_URL` | App database connection (pooled URL if your host provides one) |
+| `DIRECT_URL` | Direct database URL for schema updates |
+| `NEXTAUTH_URL` | Desk URL, e.g. `http://localhost:3000` |
+| `NEXTAUTH_SECRET` | Long random string |
+
+Then:
+
+```bash
 npm install
 npm run db:generate
 npm run db:push
@@ -29,53 +60,33 @@ npm run db:seed
 npm run dev
 ```
 
-→ http://localhost:3000
+Desk: http://localhost:3000
 
-Seeded login (change after first login):
-
-- `admin@garawol.gm` / `garawol123`
-- `secretary@garawol.gm` / `garawol123`
-
-Netlify (desk): base directory `web`. Set `DATABASE_URL` (pooled), `NEXTAUTH_URL`, `NEXTAUTH_SECRET` (strong random). Build runs `prisma generate` then `next build`.
-
-**Before handover:** change Owner/Secretary passwords in Admin → Staff. Do not ship `garawol123` to clients as a permanent password.
-
-## Website (`website/`)
+### 2. Website
 
 ```bash
 cd website
+cp .env.example .env.development
+```
+
+Set `VITE_API_BASE` to the desk URL (local default is `http://localhost:3000`).
+
+```bash
 npm install
 npm run dev
 ```
 
-→ http://localhost:5173
+Website: http://localhost:5173
 
-Set `VITE_API_BASE` (see `website/.env.example`) to the desk URL.
+Vacancies load from the desk at `GET /api/public/vacancies`.
 
-Netlify (website): base directory `website`. Set `VITE_API_BASE` to the **production desk URL** at **build** time.
+### 3. Deploy
 
-## Production notes
-
-- Word import and local photo upload are **disabled on Netlify/production** (no durable disk / SQLite there). Portfolio is already on Neon.
-- Public API: `GET /api/public/vacancies` (CORS `*`) for the marketing site.
-- Neon cold starts: first request after idle may be slow; use pooled `DATABASE_URL` with `connect_timeout=30`.
+- Deploy `web/` as the desk. Set the same env vars for production (`NEXTAUTH_URL` must be the live desk URL).
+- Deploy `website/` as the public site. Set `VITE_API_BASE` to the **live** desk URL at build time.
 
 ## Brand
 
-- Company: MF & F Enterprise
-- Colours: navy, white, gold
-- Receipts: `MFF-YYYY-#####`
-
-## Database
-
-- Prisma schema: `web/packages/db/prisma/schema.prisma`
-- Hosted on Neon Postgres (local and production)
-- Real portfolio lives in Neon; optional one-shot reload from local SQLite:
-
-```bash
-cd web
-# requires web/data/garawol.db + DATABASE_URL
-npx tsx scripts/migrate-sqlite-to-neon.ts
-```
-
-- Word/ledger import scripts still target SQLite and are only for rebuilding that file if needed
+- Company: MF & F Enterprise  
+- Colours: navy, white, gold  
+- Receipt numbers: `MFF-YYYY-#####`

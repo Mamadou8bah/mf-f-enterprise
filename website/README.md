@@ -1,12 +1,18 @@
 # MF & F public website
 
-Independent Vite + React site. It only calls the desk API:
+Public site for MF & F Enterprise — company presence and vacant rooms from the desk.
 
-`GET {VITE_API_BASE}/api/public/vacancies`
+## Setup
+
+```bash
+cp .env.example .env.development
+```
+
+Set `VITE_API_BASE` to the desk base URL (no trailing slash), e.g. `http://localhost:3000`.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Copy `.env.example` → `.env.development` and set `VITE_API_BASE` (default `http://localhost:3000`).
+Open http://localhost:5173
