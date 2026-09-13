@@ -69,7 +69,8 @@ cd website
 cp .env.example .env.development
 ```
 
-Set `VITE_API_BASE` to the desk URL (local default is `http://localhost:3000`).
+Set `VITE_API_BASE` to the desk URL (local default is `http://localhost:3000`).  
+Set `VITE_SITE_URL` to the public website URL (for link previews and sitemap).
 
 ```bash
 npm install
@@ -83,7 +84,9 @@ Vacancies load from the desk at `GET /api/public/vacancies`.
 ### 3. Deploy
 
 - Deploy `web/` as the desk. Set the same env vars for production (`NEXTAUTH_URL` must be the live desk URL).
-- Deploy `website/` as the public site. Set `VITE_API_BASE` to the **live** desk URL at build time.
+- Deploy `website/` as the public site. At build time set:
+  - `VITE_API_BASE` → live desk URL
+  - `VITE_SITE_URL` → live website URL
 
 ## Brand
 

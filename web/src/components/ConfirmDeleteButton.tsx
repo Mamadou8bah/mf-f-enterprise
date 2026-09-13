@@ -8,6 +8,7 @@ export function ConfirmDeleteButton({
   label = "Delete",
   title,
   description,
+  confirmLabel = "Delete",
   endpoint,
   method = "DELETE",
   body,
@@ -17,6 +18,7 @@ export function ConfirmDeleteButton({
   label?: string;
   title: string;
   description: string;
+  confirmLabel?: string;
   endpoint: string;
   method?: "DELETE" | "POST";
   body?: Record<string, unknown>;
@@ -73,7 +75,7 @@ export function ConfirmDeleteButton({
                 else router.refresh();
               }}
             >
-              {loading ? "Deleting…" : "Delete"}
+              {loading ? "Working…" : confirmLabel}
             </button>
             <button type="button" className="btn-secondary w-full sm:w-auto" onClick={close} disabled={loading}>
               Cancel

@@ -13,6 +13,7 @@ import {
   tenancyUnitLinks,
   unitsByProperty,
 } from "@/lib/data";
+import { endTenancy } from "@/lib/occupancy";
 
 export async function updateProperty(
   id: string,
@@ -49,15 +50,21 @@ export async function deleteProperty(id: string, staffId?: string | null) {
   const property = await findProperty(id);
   if (!property) throw new Error("Property not found");
   const units = await unitsByProperty(id);
+
+  // Move everyone out first, then remove the building.
+  const ended = new Set<string>();
   for (const unit of units) {
     const links = await tenancyUnitLinks(undefined, unit.id);
     for (const link of links) {
+      if (ended.has(link.tenancy_id)) continue;
       const tenancy = await findTenancy(link.tenancy_id);
       if (tenancy?.status === "active") {
-        throw new Error("Move all tenants out before deleting this property");
-      }
-      if ((await paymentsByTenancy(link.tenancy_id)).length > 0) {
-        throw new Error("This property has payment history and cannot be deleted");
+        await endTenancy({
+          tenancyId: link.tenancy_id,
+          staffId,
+          notes: "Moved out automatically — property deleted",
+        });
+        ended.add(link.tenancy_id);
       }
     }
   }
@@ -67,7 +74,9 @@ export async function deleteProperty(id: string, staffId?: string | null) {
     for (const link of links) {
       await prisma.tenancyUnit.deleteMany({ where: { unitId: unit.id } });
       const otherLinks = await tenancyUnitLinks(link.tenancy_id);
-      if (otherLinks.length === 0 && (await paymentsByTenancy(link.tenancy_id)).length === 0) {
+      const hasPayments = (await paymentsByTenancy(link.tenancy_id)).length > 0;
+      // Keep tenancies that have payment history for records; drop empty ones.
+      if (otherLinks.length === 0 && !hasPayments) {
         await prisma.tenancy.delete({ where: { id: link.tenancy_id } }).catch(() => undefined);
       }
     }
@@ -75,7 +84,14 @@ export async function deleteProperty(id: string, staffId?: string | null) {
     await prisma.unit.delete({ where: { id: unit.id } });
   }
   await prisma.property.delete({ where: { id } });
-  await insertAudit(randomUUID(), staffId || null, "property.delete", "property", id, property.name);
+  await insertAudit(
+    randomUUID(),
+    staffId || null,
+    "property.delete",
+    "property",
+    id,
+    ended.size > 0 ? `${property.name} (moved out ${ended.size})` : property.name
+  );
 }
 
 export async function deleteUnit(id: string, staffId?: string | null) {

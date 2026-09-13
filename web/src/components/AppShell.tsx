@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useEffect, useState, type ReactNode } from "react";
 import { QuickAddFab } from "@/components/QuickAddFab";
@@ -101,6 +101,7 @@ function NavItems({
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const { data } = useSession();
   const [drawer, setDrawer] = useState(false);
   const isLogin = pathname === "/login";
@@ -111,6 +112,21 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setDrawer(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (isLogin) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || (e.target as HTMLElement)?.isContentEditable) {
+        return;
+      }
+      e.preventDefault();
+      if (pathname !== "/search") router.push("/search");
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [pathname, isLogin, router]);
 
   useEffect(() => {
     if (!drawer) return;
@@ -184,6 +200,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-1.5">
+              <Link
+                href="/search"
+                aria-label="Search"
+                className="app-chrome-btn flex h-11 w-11 items-center justify-center rounded-full text-garawol-ink"
+              >
+                <SearchIcon className="h-5 w-5" />
+              </Link>
               <button
                 type="button"
                 aria-label="Menu"
@@ -195,6 +218,21 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </header>
+
+        {!isReceipt && pathname !== "/search" ? (
+          <div className="no-print hidden border-b border-[#E2E8F0] bg-[#EEF1F6]/px-8 py-3 lg:block">
+            <Link
+              href="/search"
+              className="flex max-w-xl items-center gap-3 rounded-2xl border border-garawol-line bg-white px-3.5 py-2.5 text-sm text-garawol-soft shadow-sm transition hover:border-garawol-green hover:text-garawol-ink"
+            >
+              <SearchIcon className="h-4 w-4 shrink-0" />
+              <span>Search tenants, shops, buildings, receipts…</span>
+              <kbd className="ml-auto rounded-md border border-garawol-line bg-garawol-mist px-1.5 py-0.5 text-[10px] font-semibold text-garawol-muted">
+                /
+              </kbd>
+            </Link>
+          </div>
+        ) : null}
 
         <div
           className={clsx(

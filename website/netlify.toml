@@ -7,8 +7,9 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  # Set in Netlify UI:
-  # VITE_API_BASE = https://your-desk-app-url
+# Set in Netlify UI (build-time):
+#   VITE_API_BASE = https://your-desk-app-url
+#   VITE_SITE_URL = https://your-public-website-url
 
 [[redirects]]
   from = "/*"

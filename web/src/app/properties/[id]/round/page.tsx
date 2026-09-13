@@ -116,7 +116,8 @@ export default async function RoundPage({
           />
           <ConfirmDeleteButton
             title="Delete property?"
-            description="Removes this building and empty units. Occupied units or payment history will block deletion."
+            description="All tenants in this building will be moved out automatically. The building and its units will then be removed. Payment history is kept on the tenant files."
+            confirmLabel="Move out & delete"
             endpoint="/api/admin/properties"
             body={{ id: property.id }}
             redirectTo="/properties"

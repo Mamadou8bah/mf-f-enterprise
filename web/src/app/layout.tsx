@@ -13,10 +13,23 @@ const sans = Poppins({
 
 export async function generateMetadata(): Promise<Metadata> {
   const office = await getOfficeSettings();
+  const siteUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const title = office.companyName;
+  const description = `Office payment desk for ${office.companyName} — register rent payments and issue receipts`;
+  const ogImage = `${siteUrl.replace(/\/$/, "")}/mf_logo.png`;
+
   return {
-    title: office.companyName,
-    description: `Office payment desk for ${office.companyName} — register rent payments and issue receipts`,
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: title,
+      template: `%s · ${office.companyShort}`,
+    },
+    description,
     applicationName: office.companyShort,
+    authors: [{ name: office.companyName }],
+    creator: office.companyName,
+    publisher: office.companyName,
+    robots: { index: false, follow: false },
     manifest: "/manifest.webmanifest",
     appleWebApp: {
       capable: true,
@@ -26,10 +39,26 @@ export async function generateMetadata(): Promise<Metadata> {
     formatDetection: { telephone: false },
     icons: {
       icon: [
-        { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
-        { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+        { url: "/icon.svg", type: "image/svg+xml" },
+        { url: "/mf_logo.png", type: "image/png" },
       ],
-      apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+      apple: [{ url: "/mf_logo.png" }],
+      shortcut: ["/mf_logo.png"],
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_GM",
+      url: siteUrl,
+      siteName: office.companyName,
+      title,
+      description,
+      images: [{ url: ogImage, alt: office.companyName }],
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }

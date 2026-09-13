@@ -298,40 +298,72 @@ export async function getTenancyDetail(tenancyId: string) {
 }
 
 export async function searchAll(q: string, limit = 40) {
+  const { getSearchCatalog } = await import("@/lib/search-cache");
+  const catalog = await getSearchCatalog();
   const term = q.trim().toLowerCase();
-  const tenantRows = (await allTenants())
-    .slice()
-    .sort((a, b) => a.full_name.localeCompare(b.full_name, undefined, { sensitivity: "base" }));
-  const tenants = (term
-    ? tenantRows.filter(
-        (t) =>
-          t.full_name.toLowerCase().includes(term) ||
-          (t.phone || "").includes(term) ||
-          (t.phone_secondary || "").includes(term) ||
-          matchesTenantIdQuery(term, t.id_type, t.id_number)
-      )
-    : tenantRows
-  )
-    .slice(0, term ? limit : undefined)
+
+  if (!term) {
+    return {
+      tenants: catalog.tenants.slice(0, 12).map((t) => ({
+        id: t.id,
+        fullName: t.fullName,
+        phone: t.phone,
+        idType: t.idType,
+        idNumber: t.idNumber,
+      })),
+      units: [] as { id: string; code: string; propertyId: string; propertyName: string }[],
+      receipts: [] as { id: string; receiptNo: string }[],
+      properties: [] as { id: string; name: string; area: string | null }[],
+      browsing: true as const,
+    };
+  }
+
+  const tenants = catalog.tenants
+    .filter(
+      (t) =>
+        t.fullName.toLowerCase().includes(term) ||
+        (t.phone || "").includes(term) ||
+        (t.phoneSecondary || "").includes(term) ||
+        matchesTenantIdQuery(term, t.idType, t.idNumber)
+    )
+    .slice(0, limit)
     .map((t) => ({
       id: t.id,
-      fullName: t.full_name,
+      fullName: t.fullName,
       phone: t.phone,
-      idType: t.id_type,
-      idNumber: t.id_number,
+      idType: t.idType,
+      idNumber: t.idNumber,
     }));
 
-  if (!term) return { tenants, units: [], receipts: [] };
+  const units = catalog.units
+    .filter(
+      (u) =>
+        u.code.toLowerCase().includes(term) ||
+        u.propertyName.toLowerCase().includes(term)
+    )
+    .slice(0, limit)
+    .map((u) => ({
+      id: u.id,
+      code: u.code,
+      propertyId: u.propertyId,
+      propertyName: u.propertyName,
+    }));
 
-  const units = (await allUnits())
-    .filter((u) => u.code.toLowerCase().includes(term))
+  const receipts = catalog.receipts
+    .filter((r) => r.receiptNo.toLowerCase().includes(term))
     .slice(0, limit)
-    .map((u) => ({ id: u.id, code: u.code, propertyId: u.property_id }));
-  const receipts = (await allReceipts())
-    .filter((r) => r.receipt_no.toLowerCase().includes(term))
+    .map((r) => ({ id: r.id, receiptNo: r.receiptNo }));
+
+  const properties = catalog.properties
+    .filter(
+      (p) =>
+        p.name.toLowerCase().includes(term) ||
+        (p.area || "").toLowerCase().includes(term)
+    )
     .slice(0, limit)
-    .map((r) => ({ id: r.id, receiptNo: r.receipt_no }));
-  return { tenants, units, receipts };
+    .map((p) => ({ id: p.id, name: p.name, area: p.area }));
+
+  return { tenants, units, receipts, properties, browsing: false as const };
 }
 
 export async function getReceiptBundle(receiptId: string) {

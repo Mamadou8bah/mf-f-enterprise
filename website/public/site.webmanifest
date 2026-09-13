@@ -1,0 +1,17 @@
+{
+  "name": "MF & F Enterprise",
+  "short_name": "MF & F",
+  "description": "Property and rent management across The Gambia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F7FB",
+  "theme_color": "#0B2F6B",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
